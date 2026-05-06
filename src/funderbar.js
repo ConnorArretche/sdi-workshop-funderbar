@@ -150,12 +150,22 @@ _.falsyOrTruthy = function(a){
   //Create a basic if statement to pass the tests.
   _.ifLogic = function(a, b){
     //Code Goes Below
+    if (a === b)
+    {
+      return "Great";
+    }
+    return false;
 
   }
 
     //Create a basic if else statement to pass the tests.
     _.ifElseLogic = function(a, b){
       //Code Goes Below
+      if (a === b)
+      {
+        return "Great";
+      }
+      return "Good"
 
     }
 
@@ -163,12 +173,35 @@ _.falsyOrTruthy = function(a){
     //Return the array as a single string.
     _.forLoop = function(a){
       //Code Goes Below
+      let result = "";
+      for (let i = 0; i < a.length; i++)
+      {
+        result += a[i];
+      }
+      return result;
 
+    }
+
+    _.arrValue = function(a){
+      return a;
+    }
+
+    _.arrMatrix = function(a) {
+      return a;
     }
 
     //Using NESTED for loops, iterate through an array or arrays
     _.nestedForLoop = function(a){
       //Code Goes Below
+      let result = 0;
+      for (let i = 0; i < a.length; i++)
+      {
+        for (let j = 0; j < a[i].length; j++)
+        {
+          result += a[i][j];
+        }
+      }
+      return result;
 
     }
 
@@ -176,6 +209,19 @@ _.falsyOrTruthy = function(a){
     //If an index in the array is not a number add 1 to the above mentioned variable
     _.forIfElseNum = function(a){
       //Code Goes Below
+      let result = 0;
+      for (let i = 0; i < a.length; i++)
+      {
+        if (typeof a[i] === "string")
+        {
+          result += 1;
+        }
+        else if (typeof a[i] != "string"){
+        result += a[i];
+        }
+      }
+      return result;
+
 
     }
 
@@ -183,6 +229,19 @@ _.falsyOrTruthy = function(a){
     //If an index in the array is not a string add and empty string ("") to the local variable
     _.forIfElseStr = function(a){
       //Code Goes Below
+      let result = "";
+      for (let i = 0; i < a.length; i++)
+      {
+        if (typeof a[i] === "string")
+        {
+          result += a[i];
+        }
+        else if (typeof a[i] !== "string")
+        {
+          continue;
+        }
+      }
+      return result;
 
     }
 
@@ -191,6 +250,14 @@ _.falsyOrTruthy = function(a){
     //You may notice you did this work already in previous functions but need to combine them in some way. Ideally, you should call the previous two functions in your implementation instead of copy/pasting the 'guts'.
     _.ifElseFor = function(a,b){
       //Code Goes Below
+      if (b === "string")
+      {
+        return _.forIfElseStr(a);
+      }
+      else if (b === "number")
+      {
+        return _.forIfElseNum(a);
+      }
 
     }
 

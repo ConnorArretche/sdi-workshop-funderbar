@@ -1,6 +1,12 @@
-let fun = function(a,b,c,d) {
-      //Code Goes Below
-      return (a === b || c === d);
+let fun = function(a) {
+    let result = ""
+      for (let i = 0; i < a.length; i++)
+      {
+        result += a[i];
+      }
+      return result;
+
 };
 
-console.log(fun(33,23,true,false))
+let a = ['Coding ', 'is ', 'the ', 'best!']
+console.log(fun(a))

@@ -86,8 +86,8 @@
       it("should return 'Great' if band and second parameter match", function() {
 
         expect(_.ifLogic(band, 'Queen')).to.equal('Great');
-        expect(_.ifLogic(band, 'queen')).to.equal(undefined);
-        expect(_.ifLogic(band, 'Metallica')).to.equal(undefined);
+        expect(_.ifLogic(band, 'queen')).to.equal(false);
+        expect(_.ifLogic(band, 'Metallica')).to.equal(false);
       });
 
     });
@@ -110,7 +110,7 @@
 
         expect(_.forLoop(['Coding ', 'is ', 'the ', 'best!'])).to.equal('Coding is the best!');
         expect(_.forLoop(['I ', 'got ', 'this!'])).to.equal('I got this!');
-        expect(_.forLoop([1,2,3,4,5])).to.equal(FILL_ME_IN);
+        expect(_.forLoop([1,2,3,4,5])).to.equal('12345');
       });
 
     });
@@ -122,11 +122,11 @@
     describe('TEST ONLY: Array Values', function() {
       let arry = [1,'Javascript',2,45,'Array',34,64,true];
       it("TEST ONLY: Access the Array's Values", function(){
-        expect(FILL_ME_IN).to.eql(1);
-        expect(FILL_ME_IN).to.eql(true);
-        expect(FILL_ME_IN).to.eql('Array');
-        expect(FILL_ME_IN).to.eql('Javascript');
-        expect(FILL_ME_IN).to.eql(undefined);
+        expect(_.arrValue(arry[0])).to.eql(1);
+        expect(_.arrValue(arry[7])).to.eql(true);
+        expect(_.arrValue(arry[4])).to.eql('Array');
+        expect(_.arrValue(arry[1])).to.eql('Javascript');
+        expect(_.arrValue(arry[8])).to.eql(undefined);
       });
 
     });
@@ -145,12 +145,12 @@
         [7,8,9]
       ];
       it('TEST ONLY: Access the Array\'s Values', function(){
-        expect(FILL_ME_IN).to.eql(1);
-        expect(FILL_ME_IN).to.eql(9);
-        expect(FILL_ME_IN).to.eql(5);
-        expect(FILL_ME_IN).to.eql(4);
-        expect(FILL_ME_IN).to.eql(8);
-        expect(FILL_ME_IN).to.eql(2);
+        expect(_.arrValue(arryMtrx[0][0])).to.eql(1);
+        expect(_.arrValue(arryMtrx[2][2])).to.eql(9);
+        expect(_.arrValue(arryMtrx[1][1])).to.eql(5);
+        expect(_.arrValue(arryMtrx[1][0])).to.eql(4);
+        expect(_.arrValue(arryMtrx[2][1])).to.eql(8);
+        expect(_.arrValue(arryMtrx[0][1])).to.eql(2);
       });
 
     });
@@ -169,7 +169,7 @@
       ];
       it("should return a sum of all numbers in the array matrix", function() {
         expect(_.nestedForLoop(testArray)).to.equal(6);
-        expect(_.nestedForLoop(arryMtrx)).to.equal(FILL_ME_IN);
+        expect(_.nestedForLoop(arryMtrx)).to.equal(45);
       });
 
     });
