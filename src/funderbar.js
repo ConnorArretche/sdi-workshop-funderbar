@@ -272,6 +272,7 @@ _.falsyOrTruthy = function(a){
 
     _.objectCreationBracket = (a,b,c) =>{
       //Code Goes Below
+      return a;
 
     }
 
@@ -279,14 +280,43 @@ _.falsyOrTruthy = function(a){
 
     _.objectCreationDot = (a,b,c) =>{
       //Code Goes Below
+      return a;
 
     }
+
+    _.objectCreationBracket1 = (a,b,c) => {
+      return {
+        firstName: a,
+        lastName: b,
+        zord: c
+      };
+
+
+    }
+
+        _.objectCreationDot1 = (a,b,c) => {
+      return {
+        firstName: a,
+        lastName: b,
+        zord: c
+      };
+
+
+    }
+
+    _.arrOfObjs = (a,b) => {
+      return a;
+    }
+
 
     _.objectValue = (a,b) => {
-      //Code Goes Below
+      return a[b];
 
     }
 
+    _.objOfObj = (a,b) => {
+      return a;
+    }
 
     //Below you are going to loop through an array, only this time you need to use a for...of loop rather than an traditional for loop.
     //The tests will be similar to the last time you looped through an array.
@@ -296,6 +326,17 @@ _.falsyOrTruthy = function(a){
     //Loop through the given array and return the total sum of all the numbers in the array.
     _.forOf = (a) => {
       //Code Goes Below
+      let sum = 0;
+      for (let item of a){
+        if (typeof item === "number"){
+        sum += item;
+        }
+        else if (typeof item !== "number")
+        {
+          continue;
+        }
+      }
+      return sum;
 
     }
 
@@ -304,6 +345,12 @@ _.falsyOrTruthy = function(a){
     //example array.push(value)
     _.forInKeys = (a) =>{
       //Code Goes Below
+      let newArr = [];
+      for (let key in a)
+      {
+        newArr.push(key);
+      }
+      return newArr;
 
     }
 
@@ -311,6 +358,15 @@ _.falsyOrTruthy = function(a){
     //This is similar to the above function but needs a little digging to get the value.
     _.forInValues = (a) =>{
       //Code Goes Below
+      let newArr = [];
+      for (let key in a)
+      {
+        if (a.hasOwnProperty(key)){
+        newArr.push(a[key]);
+        }
+      }
+      return newArr;
+
 
     }
 }());

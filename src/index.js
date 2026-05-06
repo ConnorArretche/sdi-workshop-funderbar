@@ -1,12 +1,13 @@
-let fun = function(a) {
-    let result = ""
-      for (let i = 0; i < a.length; i++)
-      {
-        result += a[i];
+let obj = {
+        firstName : 'Tommy',
+        lastName : 'Oliver',
+        zord : 'Dragon',
+        suit : 'Green',
+        age : 16,
+        inHighSchool : true
       }
-      return result;
 
-};
-
-let a = ['Coding ', 'is ', 'the ', 'best!']
-console.log(fun(a))
+let func = (a,b,c) => {
+    return a[b];
+}
+console.log(func(obj,"firstName"));
